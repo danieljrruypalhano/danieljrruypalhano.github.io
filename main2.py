@@ -32,4 +32,4 @@ def gerar_pdf():
     return response
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="danielruypalhano.github.io", debug=True)
