@@ -4,6 +4,10 @@ from io import BytesIO
 
 app = Flask(__name__)
 
+@app.route('/')
+def homepage():
+    return "<h1>Olá mundo!</h1>"
+
 @app.route('/gerar_pdf', methods=['POST'])
 def gerar_pdf():
     # Obtenha os dados de nome e CPF do corpo da solicitação em formato JSON
@@ -32,4 +36,4 @@ def gerar_pdf():
     return response
 
 if __name__ == '__main__':
-    app.run(host="danielruypalhano.github.io", debug=True)
+    app.run()
