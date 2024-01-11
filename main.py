@@ -28,12 +28,16 @@ def gerar_pdf():
 
     buffer.seek(0)
 
+    caminho = {
+        "file": "https://apideteste.onrender.com/gerar_pdf"
+    }
+
     # Crie uma resposta Flask
     response = make_response(buffer.getvalue())
     response.headers['Content-Type'] = 'application/pdf'
     response.headers['Content-Disposition'] = f'inline; filename={nome}_{cpf}_exemplo.pdf'
 
-    return response
+    return response, caminho
 
 if __name__ == '__main__':
     app.run()
