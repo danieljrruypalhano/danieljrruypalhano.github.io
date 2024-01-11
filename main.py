@@ -37,7 +37,7 @@ def gerar_pdf():
     response.headers['Content-Type'] = 'application/pdf'
     response.headers['Content-Disposition'] = f'inline; filename={nome}_{cpf}_exemplo.pdf'
 
-    return response, jsonfy(caminho)
+    return response, jsonify(caminho)
 
 if __name__ == '__main__':
     app.run()
